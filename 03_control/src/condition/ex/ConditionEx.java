@@ -218,7 +218,7 @@ public class ConditionEx {
 //    	// 60초과된 result1 중에서 1의 자리가 5이상인 값들만 + 추가
 //    	if(result1 > 60 && result1 % 10 >= 5) result2 += "+";
     	
-    	System.out.println("최종점수 : [ 와우] " + result1);
+    	System.out.println("최종점수 : " + result1);
     	System.out.println("성적 " + result2);
     }
     
@@ -254,16 +254,49 @@ public class ConditionEx {
     	int soc = sc.nextInt();
     	int sci = sc.nextInt();
     	
-    	double sum = (kor + eng + mat + soc + sci) / 5;
-    	String result;
+    	// 40점 미만인 과목 검사
+    	boolean flag = false;
+    	String str = ""; // 빈칸(자료형 : String, 내용 X)
     	
-    	if(sum >= 60) {
-    		result = "PASS";
-    	} else {
-    		result = "FAIL";
+    	if(kor < 40) {
+    		flag = true;
+    		str += "국어 ";
+    	}
+    	if(eng < 40) {
+    		flag = true;
+    		str += "영어 ";
+    	}
+    	if(mat < 40) {
+    		flag = true;
+    		str += "수학 ";
+    	}
+    	if(soc < 40) {
+    		flag = true;
+    		str += "사회 ";
+    	}
+    	if(sci < 40) {
+    		flag = true;
+    		str += "과학 ";
     	}
     	
-    	System.out.printf(result);
+    	// 40미만 과목이 존재하는 경우
+    	if(flag) {
+    		System.out.printf("FAIL [40점 미만 과목 : %s]", str);
+    	}
+    	
+    	
+    	// 평균(double형 결과를 반환 받기 위해 5.0으로 나눔
+    	double avg = (kor + eng + mat + soc + sci) / 5.0;
+    	
+    	if(avg < 60.0) {
+    		System.out.printf("FAIL [점수 : %.1f (평균미달)]" , avg);
+    		return; // Early return; (중간에 메서드를 종료)
+    	}
+    	
+    	System.out.printf("PASS [점수 : %.1f / 100]", avg);
+    	
+    	
+    	
     	
     	
     	

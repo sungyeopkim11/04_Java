@@ -12,7 +12,7 @@ public class LoopRun {
 		LoopEx1 ex1 = new LoopEx1();
 		
 //		ex1.method1();
-//		ex1.method2();
+		ex1.method2();
 //		ex1.method3();
 //		ex1.method4();
 //		ex1.method5();
@@ -28,7 +28,7 @@ public class LoopRun {
 //		ex2.method4();
 //		ex2.method5();
 //		ex2.method6();
-		ex2.method8();
+//		ex2.method8();
 	}
 
 }

@@ -40,7 +40,7 @@ public class StudentView {
 			System.out.println();
 			
 			switch(input) {
-			case 1: break;
+			case 1: addStudent(); break;
 			case 2: break;
 			case 3: break;
 			case 4: break;
@@ -54,6 +54,34 @@ public class StudentView {
 			
 			
 		} while(input != 0);
+	}
+	
+	/**
+	 * 학생 추가 화면 
+	 * 
+	 * 학번, 이름, 성별을 입력 받아
+	 * Student 객체로 만들어서
+	 * StudentService로 전달
+	 * -> 추가 성공 시 true / 실패 시 false 반환 받아
+	 *    결과 출력
+	 */
+	private void addStudent() {
+		
+		System.out.println("\n----- 학생 추가 -----\n");
+		
+		System.out.print("학번 : ");
+		String studentNumber = sc.nextLine();
+		
+		System.out.print("이름 : ");
+		String name = sc.nextLine();
+		
+		System.out.println("성별(남/여) : ");
+		char gender = sc.next().charAt(0);
+		
+		
+		
+		
+		
 	}
 
 }

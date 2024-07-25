@@ -2,6 +2,7 @@ package student.view;
 
 import java.util.Scanner;
 
+import student.dto.StudentDTO;
 import student.service.StudentService;
 
 
@@ -78,6 +79,30 @@ public class StudentView {
 		System.out.println("성별(남/여) : ");
 		char gender = sc.next().charAt(0);
 		
+		// 학생 객체를 생성하여 입력 받은 데이터를 저장(세팅)
+		StudentDTO std = new StudentDTO(studentNumber, name, gender);
+		
+		// StudentService 객체의 addStudent() 호출 후
+		// 결과 반환 받기
+		boolean result = service.addStudent(std);
+		
+		if(result) {
+			System.out.println(name + "학생이 추가 되었습니다");
+		} else {
+			System.out.println("더 이상 학생을 추가할 수 없습니다");
+		}
+		
+		/**
+		 * StudentService에 있는 student 객체 배열을 얻어와
+		 * 모든 학생 정보를 출력
+		 */
+		private void allStudent() {
+			System.out.println("\n----- 학생 전체 조회 -----\n");
+			
+			// StudentService에 있는 student 객체 배열 얻어오기
+			StudentDTO[] students = service.getStudents();
+			
+		}
 		
 		
 		

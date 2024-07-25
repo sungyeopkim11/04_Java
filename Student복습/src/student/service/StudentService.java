@@ -45,4 +45,28 @@ public class StudentService {
 		
 	}
 
+	/**
+	 * 학생 객체 배열 student 중 비어있는 인덱스에
+	 * 전달 받은 학생 객체(std) 추가
+	 * @param std : 입력 받은 값을 저장한 학생 개체 주소
+	 * @return true : 추가 성공 / false : 추가 실패
+	 * - 실패 조건 : students 배열에 꽉 차있는데 추가 학생이 전달된 경우
+	 */
+	public boolean addStudent(StudentDTO std) {
+		
+		// 0번 인덱스 부터
+		// 순서대로 비어있는(null) 요소를 찾아
+		// 전달 받은 std를 대입
+		
+		for(int i = 0; i < students.length; i++) {
+			
+			if(students[i] == null ) { // i번째 요소가 비어있는 경우
+				students[i] = std;
+				return true;
+			}
+		}
+		// 비어있는 요소가 없는 경우 false 반환
+		return false;
+	}
+
 }

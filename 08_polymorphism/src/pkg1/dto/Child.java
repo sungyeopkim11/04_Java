@@ -25,4 +25,12 @@ private String car;
 		this.car = car;
 	}
 	
+	// Parent toString() 오버라이딩 하기
+	@Override
+	public String toString() {
+		return "Child : " + getLastName() + " / " 
+				          + getMoney()    + " / "
+				          + car;
+	}
+	
 }

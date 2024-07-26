@@ -42,7 +42,7 @@ public class StudentView {
 			
 			switch(input) {
 			case 1: addStudent(); break;
-			case 2: break;
+			case 2: allStudent(); break;
 			case 3: break;
 			case 4: break;
 			case 5: break;
@@ -92,21 +92,16 @@ public class StudentView {
 			System.out.println("더 이상 학생을 추가할 수 없습니다");
 		}
 		
-		/**
-		 * StudentService에 있는 student 객체 배열을 얻어와
-		 * 모든 학생 정보를 출력
-		 */
-		private void allStudent() {
-			System.out.println("\n----- 학생 전체 조회 -----\n");
-			
-			// StudentService에 있는 student 객체 배열 얻어오기
-			StudentDTO[] students = service.getStudents();
-			
-		}
-		
-		
-		
+	}
+	
+	
+	private void allStudent() {
 		
 	}
+		
+		
+		
+		
+		
 
 }

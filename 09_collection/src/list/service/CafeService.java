@@ -30,4 +30,55 @@ public class CafeService {
 		return cafeList;
 	}
 
+	public CafeDTO selectIndex(int index) {
+		
+		
+		if(index < 0 || index >= cafeList.size()) return null;
+		return cafeList.get(index);
+	}
+
+	public List<CafeDTO> selectStore(String store) {
+		
+		List<CafeDTO> searchList = new ArrayList<CafeDTO>();
+		
+		for(CafeDTO storename : cafeList) {
+			
+			if(storename.getStore().contains(store)) {
+				
+				searchList.add(storename);
+			}
+		}
+		
+		return searchList;
+	}
+
+	public List<CafeDTO> selectPrice(int min, int max) {
+
+		List<CafeDTO> searchList = new ArrayList<CafeDTO>();
+		
+		for(CafeDTO storename : cafeList) {
+			int price = storename.getPrice();
+			
+			if(price >= min && price <= max) {
+				searchList.add(storename);
+			}
+		}
+
+		return searchList;
+	}
+	
+	public boolean addCafe(CafeDTO newCafe) {
+		return cafeList.add(newCafe);
+	}
+
+	public String removeCafe(int index) {
+		
+		if(index < 0 || index >= cafeList.size()) {
+			return null;
+		}
+		
+		return cafeList.remove(index).getStore();
+	}
+	
+
 }

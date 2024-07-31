@@ -27,6 +27,8 @@ public class CafeView {
 			System.out.println("4. 가격으로 조회");
 			System.out.println("5. 카페 추가");
 			System.out.println("6. 카페 삭제");
+			System.out.println("7. 커피 가격 수정");
+			
 			System.out.println("0. 종료");
 			
 			System.out.println();
@@ -44,6 +46,7 @@ public class CafeView {
 			case 4: selectPrice(); break;
 			case 5: addCafe(); break;
 			case 6: removeCafe(); break;
+			case 7: updateCoffee(); break;
 			case 0: System.out.println("***** 프로그램 종료 *****"); break;
 			default: System.out.println("-=-= 잘못 입력 -=-=");
 			}
@@ -167,6 +170,74 @@ public class CafeView {
 		}
 		System.out.printf("[%s] 카페가 목록에서 제거 되었습니다 ", result);
 	}
+	
+	
+	
+	private void updateCoffee() {
+		System.out.println("\n***** 커피 가격 수정 *****\n");
+		
+		System.out.println("수정할 커피의 인덱스 입력 : ");
+		int index = sc.nextInt();
+		
+		CafeDTO coffee = service.selectIndex(index);
+		
+		if(coffee == null) {
+			System.out.println("해당 인덱스에 커피가 존재하지 않습니다");
+			return;
+		}
+		System.out.print("수정할 커피 입력");
+		String newCoffee = sc.nextLine();
+		System.out.print("수정할 가격 입력");
+		int newPrice = sc.nextInt();
+		
+		String beforeCoffee = coffee.getCoffee();
+		int beforePrice = coffee.getPrice();
+		
+		coffee.setCoffee(newCoffee);
+		coffee.setPrice(newPrice);
+		
+		System.out.printf("%s 메뉴가 %s로 변경되고 가격이 %d에서 %d로 수정되었습니다",
+				         beforeCoffee, newCoffee, beforePrice, newPrice );
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		
 		
 	

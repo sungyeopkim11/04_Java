@@ -14,7 +14,7 @@ import dto.Member;
 public class MemberDaoImpl implements MemberDao{
 
 	// 회원 데이터가 저장될 파일 경로를 상수로 지정
-	private final String FILE_PATH = "/io_test/membership복습.dat";
+	private final String FILE_PATH = "/io_test/mem복습.dat";
 	
 	// 회원목록을 저장해둘 List
 	private List<Member> memberList = null;
@@ -53,12 +53,12 @@ public class MemberDaoImpl implements MemberDao{
 			memberList = new ArrayList<Member>();
 		}
 		
-		// memberList 반환
-		@Override
-		public List<Member> getMembers(){
-			
-		}
-		
+//		// memberList 반환
+//		@Override
+//		public List<Member> getMemberList() {
+//			return mamberList;
+//		}
+//		
 		
 		
 		

@@ -27,6 +27,8 @@ public interface MemberDao {
 	 * @throws IOException
 	 */
 	boolean addMember(Member member) throws IOException;
+	
+
 
 
 

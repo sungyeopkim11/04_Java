@@ -24,28 +24,28 @@ public class MemberServiceImpl implements MemberService{
 	}
 	
 	
-	@Override
-	public boolean addMember(String name, String phone) throws IOException {
-		
-		// 1) 회원 목록을 얻어와 휴대폰 번호 중복 검사
-		List<Member> memberList = dao.getMembersList();
-		
-		for(Member member : memberList) {
-			// 휴대폰 번호가 같은 경우 == 중복인 경우
-			if(phone.equals(member.getPhone())) {
-				return false;
-			}
-		}
-		
-		// 2) 중복이 아닌경우
-		//    입력 받은 정보를 이용해 Member 객체를 생성하고
-		//    DAO에 전달하여 파일에 저장
-		Member member = new Member(name, phone, 0, Member.COMMON);
-		
-		// DAO 메서드 호출 후 결과 반환 받기
-		boolean result = dao.addMember(member); 
-		
-		return false;
-	}
+//	@Override
+//	public boolean addMember(String name, String phone) throws IOException {
+//		
+//		// 1) 회원 목록을 얻어와 휴대폰 번호 중복 검사
+//		List<Member> memberList = dao.getMembersList();
+//		
+//		for(Member member : memberList) {
+//			// 휴대폰 번호가 같은 경우 == 중복인 경우
+//			if(phone.equals(member.getPhone())) {
+//				return false;
+//			}
+//		}
+//		
+//		// 2) 중복이 아닌경우
+//		//    입력 받은 정보를 이용해 Member 객체를 생성하고
+//		//    DAO에 전달하여 파일에 저장
+//		Member member = new Member(name, phone, 0, Member.COMMON);
+//		
+//		// DAO 메서드 호출 후 결과 반환 받기
+//		boolean result = dao.addMember(member); 
+//		
+//		return false;
+//	}
 	
 }

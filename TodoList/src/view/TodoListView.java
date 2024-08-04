@@ -3,6 +3,7 @@ package view;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 
 import service.TodoListService;
 import service.TodoListServiceImpl;
@@ -90,14 +91,32 @@ public class TodoListView {
 		int input = Integer.parseInt( br.readLine() );
 		System.out.println();
 		return input;
-	}ssssss
+	}
 	
 	// ------------------------------------------------------
 	// [Todo List Full View]
 	public void fullView() {
 		System.out.println("\n=========== [1. Todo List Full View] ==============\n");
 		
+		List<Todo> todoList = service.getTodoList();
 		
+		if (todoList.isEmpty()) {
+			System.out.println("\n### List가 존재하지 않습니다###\n");
+			return;
+		}
+		
+		
+		System.out.println("---------------------------------------");
+		
+		System.out.printf("%-5s, %-6s, %8s, %4s \n",
+				"[인덱스], [등록일], [완료여부], [할 일 제목]");
+		
+		System.out.println("---------------------------------------");
+
+		for(int i=0 ; i<todoList.length() ; i++) {
+			System.out.printf("%-5d, %-6s, %8b, %4s \n",
+					i+1, todo.getregDate(), todo.getcomplete(), todo.getTitle());
+		}
 	}
 	
 	
